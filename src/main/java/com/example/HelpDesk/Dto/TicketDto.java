@@ -22,7 +22,7 @@ public class TicketDto {
     private Long user_id;
     private String create_date;
     private String description;
-    private String Status="Unassign";
+    private String Status="UNASSIGN";
     private Long category_id;
     private String priorityLevel = "Medium";
     private  List<String> attachmentsPath;

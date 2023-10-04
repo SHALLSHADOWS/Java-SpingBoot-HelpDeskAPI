@@ -99,7 +99,14 @@ public class TicketController {
         }
         return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
     }
-
+    @DeleteMapping("tickets")
+    public ResponseEntity<Response> deleteTickets(@RequestBody List<Long> ids) {
+        Response response = ticketService.deleteTickets(ids);
+        if ("Error".equals(response.getStatus())) {
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
+    }
 
 }
 

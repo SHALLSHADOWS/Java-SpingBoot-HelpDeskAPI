@@ -102,6 +102,18 @@ public class TicketServiceImpl implements TicketService {
         }
         return new Response("Error", "Ticket with the id "+ id +" does not exist",null);
     }
+    public Response deleteTickets(List<Long> ids) {
+        List<Ticket> ticketsToDelete = ticketRepository.findAllById(ids);
+        if (ticketsToDelete.size() != ids.size()) {
+            return new Response("Error", "Some tickets do not exist", null);
+        } else {
+            ticketRepository.deleteAll(ticketsToDelete);
+            return new Response("Success", "Tickets deleted", null);
+        }
+    }
+
+
+
 
     private TicketDto mapToDto(Ticket ticket) {
         TicketDto ticketDto = new TicketDto();

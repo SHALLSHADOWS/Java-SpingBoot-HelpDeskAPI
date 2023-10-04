@@ -31,7 +31,7 @@ public class TicketAssignController
         TicketAssignDto newTicketAssignDto = ticketAsignService.AssignTicketToSupport(ticketAssignDto);
 
         if (newTicketAssignDto != null) {
-            ticketDto.setStatus("Assign");
+            ticketDto.setStatus("ASSIGN");
 
             ticketService.updateTicket(ticketDto,ticketDto.getId());
             return new ResponseEntity<>(newTicketAssignDto, HttpStatus.CREATED);

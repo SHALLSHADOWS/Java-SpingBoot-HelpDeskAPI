@@ -13,6 +13,6 @@ public interface TicketService {
     Response<TicketDto> finById(Long id);
 
     Response<TicketDto> updateTicket(TicketDto ticketDto, Long id);
-
+    Response deleteTickets(List<Long> ids);
     Response deleteTicket(Long id);
 }

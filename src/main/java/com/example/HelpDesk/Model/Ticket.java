@@ -25,7 +25,7 @@ public class Ticket {
     private String UserEmail;
     private String number;
     private String Subject;
-    private String Status="Unassign";
+    private String Status="UNASSIGN";
     private Long user_id;
     private String create_date;
     private String description;
